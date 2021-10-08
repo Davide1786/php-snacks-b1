@@ -44,6 +44,31 @@
         ?>
     </div>
 
+    <div class="sneckDue">
+        <?php   
+            // $nome = $_GET['nome'] . ' ' . $_GET['mail'] . ' ' . $_GET['age'];
+            // echo $nome . ' ' . $mail . ' ' . $age . '<br>';
+
+            $nome = $_GET['nome'];
+            $mail = $_GET['mail'];
+            $age = $_GET['age'];
+            echo 'Nome:' . ' ' . $nome . ' ' . '<br>' . 'Mail:' . ' ' . $mail . ' ' . '<br>' . 'Età:' . ' ' . $age . '<br>';
+
+            if (empty($mail) && empty($nome) && empty($age)) {
+                echo 'Inserire un nome una mail e l\'età' . '<br>';
+            } 
+            
+            elseif ((strlen($nome) > 3) && (strpos($mail, '@')) && (strpos($mail, '.')) && (is_numeric($age)))  {
+                echo 'accesso riuscito';
+            } else {
+                echo 'accesso negato';
+            }
+
+        ?>
+    
+    
+    </div>
+
  
     
 </body>
